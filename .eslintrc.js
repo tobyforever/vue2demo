@@ -26,9 +26,12 @@ module.exports = {
     }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'no-multiple-empty-lines': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'no-unused-vars': process.env.NODE_ENV === 'production' ? 2 : 0,
     'no-console':0,
     'global-require':0,
     'import/newline-after-import':0,
     'spaced-comment':0,
+    
   }
 }
