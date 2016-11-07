@@ -32,6 +32,7 @@ module.exports = {
     'global-require':0,
     'import/newline-after-import':0,
     'spaced-comment':0,
-    
+    'semi':0,
+    'comma-dangle':0
   }
 }
