@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'user index',
+  name: 'user-index',
   data() {
     return {
       msg: 'this is user index page',

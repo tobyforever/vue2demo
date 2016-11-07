@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'shop index',
+  name: 'shop-index',
   data() {
     return {
       msg: 'this is shop index page',

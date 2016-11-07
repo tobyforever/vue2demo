@@ -1,6 +1,7 @@
 import Vue from 'vue';
-import App from 'pages/App';
+// import App from 'pages/App';
 import VueRouter from 'vue-router';
+import routes from 'scripts/router/routes';
 
 /* eslint-disable no-new */
 // new Vue({
@@ -10,18 +11,12 @@ import VueRouter from 'vue-router';
 // });
 
 Vue.use(VueRouter);
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
-const routes = [
-  { path: '/', component: App },
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
-];
 
+// console.dir(routes); //检查:export的routes必须是数组
 const router = new VueRouter({
   routes
-})
+});
 
 const app = new Vue({
   router
-}).$mount('#app')
+}).$mount('#app');

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'service index',
+  name: 'service-index',
   data() {
     return {
       msg: 'this is service index page',
