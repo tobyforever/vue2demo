@@ -33,6 +33,8 @@ module.exports = {
     'import/newline-after-import':0,
     'spaced-comment':0,
     'semi':0,
-    'comma-dangle':0
+    'comma-dangle':0,
+    'key-spacing':0,
+    'no-undef':process.env.NODE_ENV === 'production' ? 1 : 0,
   }
 }
