@@ -1,6 +1,13 @@
 <template>
   <div class="index">
+
     <h1>{{ msg }}</h1>
+    <ul>
+      <li>我的</li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 </template>
 

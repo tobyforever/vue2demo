@@ -17,6 +17,15 @@ const router = new VueRouter({
   routes
 });
 
+/* eslint-disable no-unused-vars */
 const app = new Vue({
   router
 }).$mount('#app');
+
+router.beforeEach((to, from, next) => {
+  console.log(from);
+  console.log('=>');
+  console.log(to);
+  // console.log('routing '+from+' => '+to);
+  next();
+})
