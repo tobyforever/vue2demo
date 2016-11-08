@@ -5,20 +5,21 @@ if (DEV) {
   server = '/api';
 }
 
-const path = {
-  getbanner: '/app/public/getbanner',
-  goods_recommend: '/app/goods/recommend',
-  goods_getchild: '/app/goods/getChild',
-  public_advertising: '/app/public/advertising',
-  goods_getcates: '/app/goods/getCates',
-  shop_recommend: '/app/shop/recommend'
+const TOKEN = 'ax9b3QVfdbdYfHvPQKdhh6qnPT2qMYqm';
+const API = {
+  getbanner: `${server}/app/public/getbanner?token=${TOKEN}`,
+  goods_recommend: `${server}/app/goods/recommend?token=${TOKEN}`,
+  goods_getchild: `${server}/app/goods/getChild?token=${TOKEN}`,
+  public_advertising: `${server}/app/public/advertising?token=${TOKEN}`,
+  goods_getcates: `${server}/app/goods/getCates?token=${TOKEN}`,
+  shop_recommend: `${server}/app/shop/recommend?token=${TOKEN}`
 }
 
-const APIConfig = {}
+// _.forIn(API, (value, key) => {
+//   API[key] = server + value
+// })
 
-_.forIn(path, (key, value) => {
-  APIConfig[key] = value
-})
+API.TOKEN = TOKEN;
 
-console.dir(APIConfig);
-export default APIConfig;
+// console.dir(APIConfig);
+export default API;

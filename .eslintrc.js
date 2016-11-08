@@ -35,6 +35,7 @@ module.exports = {
     'semi':0,
     'comma-dangle':0,
     'key-spacing':0,
+    'arrow-spacing':0,
     'no-undef':process.env.NODE_ENV === 'production' ? 1 : 0,
   }
 }

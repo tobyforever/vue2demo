@@ -10,8 +10,10 @@
   </div>
 </template>
 
-<script>
-  import APIConfig from 'scripts/common/api';
+<script type="text/babel">
+  import API from 'scripts/common/api';
+  import axios from 'axios';
+
   export default {
     name: 'index',
     data() {
@@ -21,7 +23,45 @@
     },
     created() {
       console.log(`msg is ${this.msg}`)
-      console.dir(APIConfig)
+      this.loaddata()
+    },
+    methods: {
+      showdata(res1, res2, res3, res4, res5) {
+        debugger
+        console.log(res1);
+      },
+      loaddata() {
+        console.dir(API)
+//      const p = {
+//        params: {
+//          token: API.TOKEN
+//        }
+//      }
+
+        const getgoodsrecommend = axios.get(API.goods_recommend, {
+          params: {
+            city: '海口'
+          }
+        });
+        const getbanner = axios.get(API.getbanner);
+        const getgoodschild = axios.get(API.goods_getchild);
+        const getadvertising = axios.get(API.public_advertising);
+        const getgoodscates = axios.get(API.goods_getcates, {
+          params: {
+            group: '推荐'
+          }
+        });
+        const getshoprecommend = axios.get(API.shop_recommend, {
+          params: {
+            city: '海口'
+          }
+        });
+        const reqs = [getbanner, getgoodschild, getadvertising, getgoodscates, getshoprecommend];
+        axios.all(reqs).then(axios.spread((res1, res2, res3, res4, res5)=> {
+          console.log('reqs ok!')
+          this.showdata(res1.data, res2.data, res3.data, res4.data, res5.data)
+        }))
+      }
     }
   };
 </script>
